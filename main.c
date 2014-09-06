@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/06 10:11:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/06 22:22:54 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/06 23:10:08 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,34 @@ void	print_possible_chars(char *possible)
 char	*possible_chars(char **nums, int row, int col)
 {
 	int		i;
+	int		poss_bin[9];
 	char	*possible;
 
 	printf("possible_chars: (%d, %d)\n", row, col);
 
-	possible = malloc(sizeof(char) * LEN);
+	// this was added later
+	i = 0;
+	while (i < LEN)
+		poss_bin[i++];
+	i = 0;
+	while (i < LEN)
+	{
+		if (nums[row][i] != '.')
+			poss_bin[nums[row][i] - '1'] = 1;
+		i++;
+	}
+	i = 0;
+	while (i < LEN)
+	{
+		if (nums[i][col] != '.')
+			poss_bin[nums[i][col] - '1'] = 1;
+		i++;
+	}
+		
+
+
+	// what was there before (below)
+	possible = (char*)malloc(sizeof(char) * LEN);
 	i = 0;
 	while (i < LEN)
 		possible[i++] = 0;
@@ -56,7 +79,7 @@ char	*possible_chars(char **nums, int row, int col)
 	while (i < LEN)
 	{
 		if (nums[row][i] != '.')
-			possible[nums[row][i] - '0'] = 1;
+			possible[nums[row][i] - '1'] = 1;
 		i++;
 	}
 	i = 0;
@@ -70,7 +93,7 @@ char	*possible_chars(char **nums, int row, int col)
 	while (i < LEN)
 	{
 		if (nums[(row / 3) + (i % 3)][(col / 3) + (i % 3)] != '.')
-			possible[nums[(row / 3) + (i % 3)][(col / 3) + (i % 3)] - '0'] = 1;
+			possible[nums[(row / 3) + (i % 3)][(col / 3) + (i % 3)] - '1'] = 1;
 		i++;
 	}
 	printf("the characters: ");
@@ -124,7 +147,7 @@ int		solve(char **nums, int row, int col, int *solved)
 	}
 	i = 0;
 	possible = possible_chars(nums, row, col);
-	while (i < LEN)
+	while (i < LEN)		// while (possible[i])
 	{
 		nums[row][col] = possible[i] + '1';
 		ret_value = solve(nums, row, col, solved);
