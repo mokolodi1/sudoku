@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/06 10:11:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/06 23:10:08 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/06 23:18:45 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ char	*possible_chars(char **nums, int row, int col)
 			poss_bin[nums[i][col] - '1'] = 1;
 		i++;
 	}
+	
 		
 
 
