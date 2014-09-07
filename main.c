@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/06 10:11:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 18:58:46 by nkhaldi          ###   ########.fr       */
+/*   Updated: 2014/09/07 21:29:07 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ int			input_check(int size, char **nums)
 	return (0);
 }
 
-/*
-** The main function: everything happens from here
-*/
-
 int			main(int argc, char **argv)
 {
 	char		*result;
@@ -59,11 +55,11 @@ int			main(int argc, char **argv)
 	{
 		result = sudoku(argv);
 		if (result == NULL)
-			ft_putstr("Erreur with sudoku\n");
+			ft_putstr("Erreur\n");
 		else
 			print_sudoku(result);
 	}
 	else
-		ft_putstr("Erreur with input\n");
+		ft_putstr("Erreur\n");
 	return (0);
 }

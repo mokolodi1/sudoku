@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/07 11:53:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 18:41:19 by nkhaldi          ###   ########.fr       */
+/*   Updated: 2014/09/07 21:28:21 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include	<unistd.h>
 # include	<stdlib.h>
-# include	<stdio.h>		// nope
 
 # define		LEN					9
 # define		INCONCLUSIVE		0
@@ -36,7 +35,7 @@ char			*sudoku(char **nums);
 
 void			ft_putchar(char c);
 void			ft_putstr(char *str);
-void			print_sudoku(char *solution); //del 1 * , name solution instead of nums
+void			print_sudoku(char *solution);
 
 void			copy_solution(char **nums, t_solution *t_sol);
 void			gen_collisions(char **nums, int (*collisions)[9], int r, int c);

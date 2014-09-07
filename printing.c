@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/07 11:43:16 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 19:00:21 by nkhaldi          ###   ########.fr       */
+/*   Updated: 2014/09/07 21:27:22 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,9 @@ void		ft_putstr(char *str)
 	}
 }
 
-/*
-**	Prints a sudoku board
-*/
-
-void		print_sudoku(char *solution) //delete name "nums"
+void		print_sudoku(char *solution)
 {
-	int		i;// need to do stuff here
+	int		i;
 
 	i = 0;
 	while (solution[i])
