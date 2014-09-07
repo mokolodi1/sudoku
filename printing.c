@@ -6,11 +6,11 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/07 11:43:16 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 17:47:39 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/07 19:00:21 by nkhaldi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"printing.h"
+#include	"sudoku.h"
 
 void		ft_putchar(char c)
 {
@@ -33,25 +33,18 @@ void		ft_putstr(char *str)
 **	Prints a sudoku board
 */
 
-void		print_sudoku(char *nums)
+void		print_sudoku(char *solution) //delete name "nums"
 {
-	int		i;		// need to do stuff here
+	int		i;// need to do stuff here
 
-	line = 0;
-	while (line < LEN)
+	i = 0;
+	while (solution[i])
 	{
-		letter = 0;
-		while (letter < LEN)
-		{
-			ft_putchar(nums[line][letter]);
-			if (letter < LEN - 1)
-				ft_putchar(' ');
-			else
-				ft_putchar('\n');
-			letter++;
-		}
-		line++;
+		ft_putchar(solution[i]);
+		if ((i + 1) % LEN == 0)
+			ft_putchar('\n');
+		else
+			ft_putchar(' ');
+		i++;
 	}
 }
-
-

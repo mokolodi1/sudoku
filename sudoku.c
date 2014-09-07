@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/07 11:18:05 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 17:49:58 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/07 19:04:17 by nkhaldi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char		*possible_chars(char **nums, int r, int c)
 		i++;
 	}
 	possible[i] = '\0';
-	return possible;
+	return (possible);
 }
 
 /*
@@ -76,9 +76,9 @@ int			solve(char **nums, int row, int col, t_solution *t_sol)
 	int		i;
 	int		ret_value;
 	char	*possible;
-	
+
 	if (nums[row][col] != '.')
-		return call_with_next_num(nums, row, col, t_sol);
+		return (call_with_next_num(nums, row, col, t_sol));
 	i = 0;
 	possible = possible_chars(nums, row, col);
 	while ((nums[row][col] = possible[i]))
@@ -108,13 +108,13 @@ int			solve(char **nums, int row, int col, t_solution *t_sol)
 char		*sudoku(char **nums)
 {
 	int			ret_val;
+	t_solution	t_sol;
 
 	t_sol.solved = INCONCLUSIVE;
 	ret_val = solve(nums, 0, 0, &t_sol);
 	printf("ret_val: %d\n", ret_val);
 	printf("solved: %d\n", t_sol.solved);
 	if ((ret_val == INCONCLUSIVE && t_sol.solved == 0) || ret_val == MULTIPLE)
-		return NULL;
-	else
-		return t_sol.solution;
+		return (NULL);
+	return (t_sol.solution);
 }

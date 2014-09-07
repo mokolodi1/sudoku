@@ -6,24 +6,24 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/07 17:02:04 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 17:41:00 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/07 19:01:31 by nkhaldi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"sudoku_util.h"
+#include	"sudoku.h"
 
 void		copy_solution(char **nums, t_solution *t_sol)
 {
-	int line;
-	int letter;
-	int overall;
+	int	line;
+	int	letter;
+	int	overall;
 
 	line = 0;
-	letter = 0;
 	overall = 0;
 	t_sol->solution = (char*)malloc((LEN * LEN + 1) * sizeof(char));
 	while (line < LEN)
 	{
+		letter = 0;
 		while (letter < LEN)
 		{
 			t_sol->solution[overall] = nums[line][letter];
@@ -36,10 +36,10 @@ void		copy_solution(char **nums, t_solution *t_sol)
 	t_sol->solved = SOLVED;
 }
 
-void		gen_collisions(char **nums, int **collisions, int r, int c)
+void		gen_collisions(char **nums, int (*collisions)[9], int r, int c)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < LEN)
 	{

@@ -6,11 +6,11 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/06 10:11:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/07 17:49:45 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/07 18:58:46 by nkhaldi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"main.h"
+#include	"sudoku.h"
 
 /*
 ** Checks input for errors
@@ -24,7 +24,7 @@ int			input_check(int size, char **nums)
 	int		word;
 	int		letter;
 	char	curr;
-	
+
 	if (size != LEN)
 		return (1);
 	word = 0;
@@ -61,7 +61,7 @@ int			main(int argc, char **argv)
 		if (result == NULL)
 			ft_putstr("Erreur with sudoku\n");
 		else
-			print_sudoku(argv);
+			print_sudoku(result);
 	}
 	else
 		ft_putstr("Erreur with input\n");
